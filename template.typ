@@ -1,9 +1,13 @@
-#import "@preview/codly:1.1.1": *
+#import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.1": *
 #import "@preview/cetz:0.2.2"
 
 
 // #let implies = $arrow.double.long$
+
+#let porblem_counter = counter("problem")
+
+#let prob = [== #smallcaps(text([Problem], )) #porblem_counter.step() #context {porblem_counter.display()}]
 
 #let template(
   title: "Homework",
@@ -37,6 +41,20 @@
       ]
       ]    
   )
+  show ref: it => {
+    let eq = math.equation
+    let el = it.element
+    if el != none and el.func() == eq {
+      // Override equation references.
+      [式#link(el.location(),numbering(
+        el.numbering,
+        ..counter(eq).at(el.location())
+      ))]
+    } else {
+      // Other references as usual.
+      it
+    }
+  }
 
   set par(leading: 1.1em, first-line-indent: 0em, justify: true, )
   show table: set align(center)

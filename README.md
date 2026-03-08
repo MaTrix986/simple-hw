@@ -1,12 +1,13 @@
-# unilab
+# simple-HW
 
-Typst Lab Report Template
+Typst Homework Template. 
+
+Inspiration from similar template in Latex
 
 ## Local debugging
 
-clone this repo into the [local package directory](https://github.com/typst/packages?tab=readme-ov-file#local-packages), notice that the version should be specified (e.g. `.../unilab/0.0.1/`)
+clone this repo into the local package directory.
 
 ## TODO
 
-- [ ] en font support
-- [ ] support school logo
+

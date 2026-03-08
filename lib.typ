@@ -1,1 +1,1 @@
-#import "template.typ":  template
+#import "template.typ":  template, prob
